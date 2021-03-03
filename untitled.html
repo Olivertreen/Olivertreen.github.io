@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    #soccergoal {
+        width: 580px;
+        height: 580px;
+        background-image: url("soccergoal.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #ball {
+
+        background-image: url(soccerball.png);
+        background-size: cover;
+    }
+
+    .topping {
+        width: 100px;
+        height: 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        display: inline-block;
+        position: relative;
+
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="topping" id="ball"></div>
+    <div id="soccergoal"></div>
+    <script type="text/javascript">
+    var image;
+
+
+
+
+
+    function makeTopping() {
+        var ball = document.createElement("ball");
+        var angle = Math.floor((Math.random() * 360) + 1);
+        ball.style.width = "100px";
+        ball.style.height = "100px";
+        ball.style.borderRadius = "50%";
+        ball.style.position = "absolute";
+        ball.style.backgroundImage = "url(" + image + ")";
+        ball.style.backgroundSize = "cover";
+        ball.style.transform = "rotate("
+        + angle + "deg)";
+
+
+
+        soccergoal.addEventListener("mousemove", function(event) {
+            console.log(event)
+
+        });
+
+
+        soccergoal.appendChild(ball);
+
+        ball.style.left =   event.clientX - 50 + "px";
+        ball.style.top = event.clientY - 50 + "px";
+
+
+
+    };
+
+    ball.addEventListener("click", function() {
+
+        image = "soccerball.png"
+    });
+
+
+    soccergoal.addEventListener("click", makeTopping);
+    </script>
+</body>
+
+</html>
