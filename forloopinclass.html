@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		
+		.turkey{
+			background-size: contain;
+			width:100px;
+			background-repeat: no-repeat;
+			height:100px;
+			background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSslnahIOYd7fzLDHzMvRcY44VunPKAhOm_EQ&usqp=CAU);
+			display: inline-block;
+			margin:5px;
+		}
+	</style>
+</head>
+<body>
+
+
+	<center><h1>10000 Panda Heads</center>
+	<script type="text/javascript">
+		
+
+		function makeBird (y){
+
+		var x = document.createElement("div");
+		x.classList.add('turkey');
+		document.body.appendChild(x);
+
+		x.innerText=y;
+
+		}
+
+		for (var counter=0; counter<10000; counter=counter+1) {makeBird(counter + 1)}
+
+	</script>
+
+</body>
+</html>
