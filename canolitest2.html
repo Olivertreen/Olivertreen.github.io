@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title></title>
+
+        <style type="text/css">
+                
+                body{
+                        text-align: center;
+
+                }
+
+                div{
+                        height:400px;
+                        width:400px;
+                        border: 1px solid black;
+                        display: inline-block;
+                        background-image: url('https://i.pinimg.com/originals/38/ea/a9/38eaa94a51743dacf3223d2772b2ea2d.jpg');
+
+                }
+
+        </style>
+</head>
+<body>
+
+<center>
+
+        <div></div>
+
+</center>
+
+<script type="text/javascript">
+        var images = ["https://i.pinimg.com/originals/38/ea/a9/38eaa94a51743dacf3223d2772b2ea2d.jpg","https://image.shutterstock.com/image-vector/have-steaming-bun-dumpling-line-260nw-770798068.jpg"];
+                var x = 0;
+                document.querySelector(images).addEventListener("click",function(){
+                        x = x < images.length ? ++x : 0;
+                document.querySelector("body").style.background = images[x]
+                })
+
+
+</script>
+</body>
+</html>

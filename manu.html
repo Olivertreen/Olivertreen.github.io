@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    html {
+        background-color: #FC3207;
+         box-shadow: 
+        0px 0px 20px #00ccff,
+        inset 0px 0px 20px #00ccff,
+        0px 0px 60px #ff00c8,
+        inset 0px 0px 60px #ff00c8
+    }
+
+    .heart {
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        display: inline-block;
+        font-family: 'Arial';
+        text-align: center;
+        font-size: 16px;
+        margin: 20px;
+        position: relative;
+        display: inline-block;
+        margin-left: 30px;
+        transition: 2s;
+    }
+
+    .pic {
+        background-image: url("manu.png");
+
+
+    }
+
+    h1 {
+        font-family: 'Arial', cursive;
+        position: relative;
+    }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Random Manchester United Facts - Click on the Logo</h1>
+    <script type="text/javascript">
+    function makeHeart(i) {
+
+
+        var heart = document.createElement("heart");
+
+        document.body.appendChild(heart);
+        heart.classList.add("heart");
+        heart.classList.add("pic");
+        document.body.appendChild(heart);
+
+        heart.addEventListener("click", function() {
+            function remove() {
+                heart.classList.remove("pic");
+                heart.innerHTML = array[i];
+            };
+
+            function add() {
+                heart.classList.add("pic");
+                heart.innerHTML = "";
+            }
+            remove();
+            setTimeout(add, 2500)
+            console.log(event);
+        });
+
+
+        function move() {
+            heart.style.left = Math.round(Math.random() * 55) + "px";
+            heart.style.top = Math.round(Math.random() * 40) - 20 + "px";
+
+        };
+
+        setTimeout(move, 5);
+        setInterval(move, 2000);
+
+
+    };
+
+    var array = ["Manchester United are the most successful club in England and have won 20 league titles, which is more than any other team.",
+        "They have also won 11 FA Cups and 3 European Cups.",
+        "The club started as Newton Heath L&YR F.C. in 1878",
+        "All of the team worked at Lancashire and Yorkshire Railway depot at Newton Heath.",
+        "Under the management of Sir Matt Busby, Manchester United took the nickname, the 'Red Devils', from Salford Rugby Club, who toured France under the same name whilst also wearing red shirts.",
+        "In 1956, Manchester United’s Busby Babes won the league title with an average player age of just 22 years.",
+        " Manchester United’s 9-0 victory against Ipswich Town at Old Trafford on 4th March 1995 remains the biggest ever Premier League victory.", " In one of the club’s biggest upsets, United goalkeeper Gary Bailey saved three penalties against Ipswich Town at Portman Road in 1980, but United still lost the game 6-0.", "The last time Manchester United played outside the top flight of English league football was in 1975/76 under manager Tommy Docherty. He was sacked the following season.",
+    ];
+
+    for (var i = 0; i <= array.length - 1; i++) {
+        makeHeart(i);
+    }
+    </script>
+</body>
+
+</html>
